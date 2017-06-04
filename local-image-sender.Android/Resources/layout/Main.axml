@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+  <ImageView
+    android:src="@android:drawable/ic_menu_gallery"
+    android:id="@+id/imageView"
+    android:layout_weight="0.9"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/background_dark" />
+  <TextView xmlns:tools="http://schemas.android.com/tools"
+            android:text="Load a directory."
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageText"
+            android:gravity="center"
+            android:layout_marginTop="8sp"
+            android:layout_marginBottom="8sp"
+            tools:text="Image information." />
+  <TextView
+    android:text="Connection error information."
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/errorText"
+    android:gravity="center"
+    android:visibility="gone" />
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/linearLayout1">
+    <Button
+      android:text="Load directory"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:id="@+id/loadButton"
+      android:onClick="loadClick"
+      android:layout_weight="0.5" />
+    <Button
+      android:text="Transfer file"
+      android:id="@+id/sendButton"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:onClick="sendClick"
+      android:layout_weight="0.5" />
+  </LinearLayout>
+</LinearLayout>

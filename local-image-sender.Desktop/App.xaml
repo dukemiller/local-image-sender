@@ -1,0 +1,41 @@
+﻿<Application x:Class="local_image_sender.Desktop.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:classes="clr-namespace:local_image_sender.Desktop.Classes"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <Storyboard x:Key="Fade">
+                <DoubleAnimation Duration="0:0:0.50"
+                                 From="0.0"
+                                 Storyboard.TargetProperty="Opacity"
+                                 To="1.0" />
+                <DoubleAnimation BeginTime="0:0:5.50"
+                                 Duration="0:0:1.00"
+                                 From="1.0"
+                                 Storyboard.TargetProperty="Opacity"
+                                 To="0.0" />
+            </Storyboard>
+            
+            <Style x:Key="Status"
+                   BasedOn="{StaticResource {x:Type TextBlock}}"
+                   TargetType="TextBlock">
+                <Style.Triggers>
+                    <EventTrigger RoutedEvent="Binding.TargetUpdated">
+                        <BeginStoryboard Storyboard="{StaticResource Fade}" />
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <classes:BoolSymbolConverter x:Key="BoolSymbolConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
