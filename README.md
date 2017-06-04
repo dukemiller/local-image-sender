@@ -2,6 +2,10 @@
 
 A very basic dekstop file sender using a desktop tcp server and android client. I use **Xamarin.Android** for the Android implementation and **WPF** for the desktop implementation, basically using the standard libraries. Included also is a TCP server implementation specific to this project I use and reference the desktop.
 
+### Simple demo
+
+![demo](http://i.imgur.com/dK3Brpo.gif)
+
 ### Use
 
 **Setting up the server:** Open up the server and put in a valid filepath.  
